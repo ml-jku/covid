@@ -13,19 +13,19 @@ Note that we are currently in the process of uploading and cleaning up code. The
 ### Setup
 For running experiments or training the models, you need Python 3.8.2 or later.
 ```
-conda install python==3.8.2
+$ conda install python==3.8.2
 ```
 Make sure to satisfy the requirements as listed in the file ```requirements.txt```:
 ```
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 Change the current directory to the example folder:
 ```
-cd PATH/example/
+$ cd PATH/example/
 ```
 After adapting the configurations in ```config.py``` and the hyperparameters in ```hyperparams.py```, the example script can be run:
 ```
-python example.py
+$ python example.py
 ```
 
 ### Data set
