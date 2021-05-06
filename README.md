@@ -50,5 +50,6 @@ For real-world application, we suggest to train the model on all available data.
 ```
 hyperparametersearch = False
 test_months = []
+store_trained_model = True
 path_store_model = PATH_TO_STORE_TRAINED_MODEL
 ```
