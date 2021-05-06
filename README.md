@@ -1,7 +1,7 @@
 # COVID-19 Diagnosis from Blood Tests with Robustness to Domain Shifts
 Theresa Roland, Carl Böck, Thomas Tschoellitsch, Alexander Maletzky, Sepp Hochreiter, Jens Meier, Günter Klambauer
 
-We investigate machine learning models that identify COVID-19   positive   patients   and   estimate   the   mortality   risk based  on  routinely  acquired  blood  tests  in  a  hospital  setting. However, during pandemics or new outbreaks, disease and testing characteristics   change,   thus   we   face   domain   shifts.   Domain shifts  can  be  caused,  e.g.,  by  changes  in  the  disease  prevalence (spreading  or  tested  population),  by  refined  RT-PCR  testing procedures  (taking  samples,  laboratory),  or  by  virus  mutations. Therefore, machine learning models for diagnosing COVID-19 or other  diseases  may  not  be  reliable  and  degrade  in  performance over  time.  To  counter  this  effect,  we  propose  methods  that  first identify domain shifts and then reverse their negative effects on the model performance. Frequent re-training and re-assessment, as  well  as  stronger  weighting  of  more  recent  samples,  keeps model  performance  and  credibility  at  a  high  level  over  time. Our  diagnosis  models  are  constructed  and  tested  on  large-scale data sets, steadily adapt to observed domain shifts, and maintain high  ROC  AUC  values  along  pandemics.
+ABSTRACT. We investigate machine learning models that identify COVID-19   positive   patients   and   estimate   the   mortality   risk based  on  routinely  acquired  blood  tests  in  a  hospital  setting. However, during pandemics or new outbreaks, disease and testing characteristics   change,   thus   we   face   domain   shifts.   Domain shifts  can  be  caused,  e.g.,  by  changes  in  the  disease  prevalence (spreading  or  tested  population),  by  refined  RT-PCR  testing procedures  (taking  samples,  laboratory),  or  by  virus  mutations. Therefore, machine learning models for diagnosing COVID-19 or other  diseases  may  not  be  reliable  and  degrade  in  performance over  time.  To  counter  this  effect,  we  propose  methods  that  first identify domain shifts and then reverse their negative effects on the model performance. Frequent re-training and re-assessment, as  well  as  stronger  weighting  of  more  recent  samples,  keeps model  performance  and  credibility  at  a  high  level  over  time. Our  diagnosis  models  are  constructed  and  tested  on  large-scale data sets, steadily adapt to observed domain shifts, and maintain high  ROC  AUC  values  along  pandemics.
 
 Link to [Preprint](https://www.medrxiv.org/content/10.1101/2021.04.06.21254997v1.full-text).
 
@@ -46,8 +46,9 @@ The hyperparameter search will be conducted on the basis of a validation set. Th
 For the assessement of the predictive performance, we suggest prospective evaluation, rather than random cross-validation. You can set the months you want to assess your model on in the file ```config.py``` in the list ```test_months```. In the paper, we suggest to weight recent samples higher than older samples, this is implemented in the code and the weighting can be adapted in the file ```config.py``` at the variables ```sampling_2019_weights``` and ```sampling_2020_weights```.
 
 ### Train model on all available data
-For real-world application, we suggest to train the model on all available data. Therefore, ensure following settings in the file ```config.py```:
+For real-world application, we suggest to train the model on all available data. The model will be stored to the specified path. Therefore, ensure following settings in the file ```config.py```:
 ```
 hyperparametersearch = False
 test_months = []
+path_store_model = PATH_TO_STORE_TRAINED_MODEL
 ```
